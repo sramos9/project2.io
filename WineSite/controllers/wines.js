@@ -45,7 +45,7 @@ router.get('/seed/winelist', (req, res)=>{
       about: "Chardonnay is presented in several styles of wine, from bone dry, high mineral, citrus and green apple to ripe, with baked apple pie flavors, and buttered popcorn aromas. Chardonnay pairs well with white fish, grilled poultry, fruits, and cheeses such as brie, camembert and Roquefort."
     },
     {
-      name: "Pinot Grigio"
+      name: "Pinot Grigio",
       image: "http://wines.com/images/pinot-gris-glass.png",
       about: "Medium-bodied with mid-level acidity, yellow to copper-pink in color with a floral bouquet of melon, Asian pear or apple. Pairs well with stronger cheeses such as parmesan, asiago pasta dishes, as well as white meats including pork chops, and chicken dishes."
     },
@@ -61,8 +61,8 @@ router.get('/seed/winelist', (req, res)=>{
     },
     {
       name: "Rosé",
-      image: "http://mileswinecellars.com/wp-content/uploads/2014/03/rose-wine_0.jpg"
-      about: "Rosé happens when the skins of red grapes touch wine for only a short time. The primary flavors of rosé wine are red fruit, flowers, citrus, and melon, with a pleasant crunchy green flavor on the finish similar to celery or rhubarb. "
+      image: "http://mileswinecellars.com/wp-content/uploads/2014/03/rose-wine_0.jpg",
+      about: "Rosé happens when the skins of red grapes touch wine for only a short time. The primary flavors of rosé wine are red fruit, flowers, citrus, and melon, with a pleasant crunchy green flavor on the finish similar to celery or rhubarb."
     }
   ]
 });
