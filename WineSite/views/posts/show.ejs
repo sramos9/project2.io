@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Wine About It: This Post</title>
+  </head>
+  <body>
+    <header>
+      <h1>About this Post</h1>
+      <%=wine.name%><br>
+      <img src="<%=wine.image%>" alt="<%=wine.image%>" /><br>
+      <%=wine.about%><br>
+      <nav>
+        <ul>
+          <li>
+            <a href="/">Home</a>
+          </li>
+          <li>
+            <a href="/posts">All Posts</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section>
+        <h2>Posts about <%=wine.name%></h2>
+        <p>
+          <%=post.name%> <br>
+        </p>
+        <img src="<%=post.image%>"/><br>
+        <p>
+          <%=post.about%> <br>
+        </p>
+      </section>
+      <section>
+        <form action="/posts/<%=post._id%>?_method=DELETE" method="POST">
+          <input type="submit" value="Delete this Post">
+        </form>
+      </section>
+      <section>
+        <a href="/posts/<%=post._id%>/edit">Edit this post</a>
+      </section>
+    </main>
+  </body>
+</html>

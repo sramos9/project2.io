@@ -1,0 +1,34 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Wine List</title>
+  </head>
+  <body>
+    <header>
+        <h1>Wine about It</h1>
+
+        <nav>
+            <ul>
+                <li>
+                    <a href="/">Home</a>
+                </li>
+                <li>
+                    <a href="/posts/new">Create New Post</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+      <h2>Wine List</h2>
+      <ul>
+        <% for(let i = 0; i < wines.length; i++){ %>
+					<li>
+						<a href="/wines/<%=wines[i]._id%>"><%=wines[i].name%></a>
+					</li>
+				<% } %>
+      </ul>
+    </main>
+  </body>
+</html>

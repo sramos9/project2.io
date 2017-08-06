@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>New: Wine About It</title>
+  </head>
+  <body>
+    <header>
+        <h1>New Post: Wine About It</h1>
+        <nav>
+          <ul>
+            <li>
+              <a href="/">Home</a>
+            </li>
+            <li>
+              <a href="/posts">All Posts</a>
+            </li>
+          </ul>
+        </nav>
+    </header>
+    <main>
+      <form action="/posts" method="POST">
+        <select name="wineId">
+          <% for(let i = 0; i < wines.length; i++) { %>
+                        <option value="<%=wines[i]._id%>">
+                          <%=wines[i].name%>
+                        </option>
+                    <% } %>
+        </select><br>
+        <input type="text" name="name" value="Username" /><br>
+        <input type="url" name="image" value="url" /><br>
+        <textarea name="about">About/Comments about this Wine</textarea><br>
+        <input type="submit" value="Post">
+      </form>
+    </main>
+  </body>
+</html>
