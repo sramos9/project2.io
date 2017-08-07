@@ -3,6 +3,7 @@ const router = express.Router();
 const Wine = require('../models/wines.js');
 const wineSeed = require('../models/seed.js');
 const Post = require('../models/posts.js');
+const bcrypt = require('bcrypt');
 
 
 // index : GET route
