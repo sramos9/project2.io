@@ -7,7 +7,7 @@ const methodOverride 	= require('method-override');
 //middleware
 app.use(methodOverride('_method'));
 app.use(bodyParser.urlencoded({extended:false}));
-
+app.use(express.static('public'));
 
 const winesController = require('./controllers/wines.js');
 app.use('/wines', winesController);

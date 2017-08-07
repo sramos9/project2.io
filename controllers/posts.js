@@ -58,6 +58,7 @@ router.delete('/:id', (req, res) =>{
 });
 
 router.get('/:id/edit', (req, res)=>{
+  console.log('***********************');
   Post.findById(req.params.id, (err, foundPost)=>{
     Wine.find({}, (err, allWines)=>{
       Wine.findOne({'posts._id':req.params.id}, (err, foundPostWine)=>{

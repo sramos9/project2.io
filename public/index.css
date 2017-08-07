@@ -1,0 +1,33 @@
+* {
+  font-family:  'Open Sans Condensed', sans-serif;
+
+}
+
+body {
+  background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDy421KbMqBDSbIUgXjyX2CvJnxI5qwMztpq8ZHl4b3PT7Psr_5A');
+  background-repeat: repeat;
+  background-size: cover;
+  font-size: 40px;
+  color: white;
+  text-align: center;
+
+}
+
+li {
+  list-style-type: none;
+}
+
+.link {
+  text-decoration: none;
+  color: white;
+  font-size: 30px;
+  display: inline-block;
+}
+
+.link:visited {
+  color: white;
+}
+
+.link:hover {
+  color: white;
+}

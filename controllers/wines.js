@@ -34,6 +34,7 @@ router.get('/seed', (req, res)=>{
 // wine show page
 router.get('/:id', (req, res)=>{
   Wine.findById(req.params.id, (err, foundWine) =>{
+    console.log(foundWine);
     res.render('wines/show.ejs', {
         wine: foundWine
     });
