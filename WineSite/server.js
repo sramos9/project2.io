@@ -22,13 +22,15 @@ app.get('/', (req, res)=>{
 
 
 // mongoose
-mongoose.connect('mongodb://localhost:27017/winesite');
+const mongoUri = process.env.MONGODB_URI || 'mongodb://localhost:27017/winesite'
+mongoose.connect(mongoUri);
 mongoose.connection.once('open', ()=>{
 	console.log('connected to mongo');
 });
 
 
 // listen port
-app.listen(3000, ()=>{
+const port = process.env.PORT || 3000;
+app.listen(port, ()=>{
 	console.log('listening....');
 });
