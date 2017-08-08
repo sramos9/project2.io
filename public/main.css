@@ -21,4 +21,16 @@ h2 {
   text-decoration: none;
   font-size: 30px;
   float: right;
+  padding: .5em;
+}
+
+footer {
+  color: white;
+  font-size: 20px;
+  text-align: center;
+  opacity: .75;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }

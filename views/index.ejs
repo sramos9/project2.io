@@ -2,16 +2,23 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <title>Wine About It</title>
-    <link rel="icon" href="/favicon.ico">
-    <link rel="stylesheet" href="/index.css">
+    <%# MY FONT CSS LINK - GOOGLE FONTS%>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
+
+    <%# BOOTSTRAP CSS LINK%>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <%# my main index css %>
+    <link rel="stylesheet" href="/index.css">
+
   </head>
   <body>
     <header>
-      <div class="container">
+      <div class="jumbotron">
         <a class="logout" href="/sessions/logout">Logout</a>
-        <div class="jumbotron">
+        <div class="container">
           <h1>Wine About It</h1>
           <h2>A place for people who love WINE and sharing (w)IN(e)FORMATION</h2>
         </div>
@@ -33,5 +40,6 @@
         </nav>
       </div>
     </header>
+  <% include ./partials/footer.ejs %>
   </body>
 </html>

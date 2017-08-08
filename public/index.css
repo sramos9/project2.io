@@ -8,22 +8,23 @@ body {
   /*background-image: url('http://www.lodiwine.com/assets/images/contentblock/photos/IMG_4451.jpg');*/
   background-repeat: repeat;
   background-size: cover;
-  font-size: 40px;
-  color: white;
-
 }
 
-.container {
+.jumbotron {
   background-color: black;
   opacity: .6;
   color: white;
-  font-size: 30px;
-  width: 90%;
+  /*font-size: 30px;*/
+  /*width: 90%;*/
   /*height: 30%;*/
   justify-content: center;
-  margin: 0 auto;
+  /*margin: 0 auto;*/
   text-align: center;
+  margin-top: 20%;
+}
 
+.container {
+  text-align: center;
 }
 
 li {
@@ -50,9 +51,16 @@ li {
   text-decoration: none;
   font-size: 30px;
   float: right;
+  padding: .5em;
 }
 
-
-/*.jumbotron {
-
-}*/
+footer {
+  color: white;
+  font-size: 20px;
+  text-align: center;
+  opacity: .75;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
