@@ -85,27 +85,28 @@ router.get('/:id/edit', (req, res)=>{
 // });
 
 router.put('/:id', (req, res)=>{
-    Post.findByIdAndUpdate(req.params.id, req.body, { new: true }, (err, updatedPost)=>{
-        Wine.findOne({ 'post._id' : req.params.id }, (err, foundWine)=>{
-			if(foundWine._id.toString() !== req.body.wineId){
-				foundWine.posts.id(req.params.id).remove();
-				foundWine.save((err, savedFoundWine)=>{
-					Wine.findById(req.body.wineId, (err, newWine)=>{
-						newWine.posts.push(updatedPost);
-						newWine.save((err, savedNewWine)=>{
-			                res.redirect('/posts/'+req.params.id);
-			            });
-					});
-	            });
-			} else {
-				foundWine.posts.id(req.params.id).remove();
-	            foundWine.posts.push(updatedPost);
-	            foundWine.save((err, data)=>{
-	                res.redirect('/posts/'+req.params.id);
-	            });
-			}
+  Post.findByIdAndUpdate(req.params.id, req.body, { new: true }, (err, updatedPost)=>{
+    Wine.findOne({ 'posts._id' : req.params.id }, (err, foundWine)=>{
+      console.log("+++++++++++++++++", req.params.id);
+      if(foundWine._id.toString() !== req.body.wineId){
+        foundWine.posts.id(req.params.id).remove();
+        foundWine.save((err, savedFoundWine)=>{
+          Wine.findById(req.body.wineId, (err, newWine)=>{
+            newWine.posts.push(updatedPost);
+            newWine.save((err, savedNewWine)=>{
+              res.redirect('/posts/'+req.params.id);
+            });
+          });
         });
+      } else {
+        foundWine.posts.id(req.params.id).remove();
+        foundWine.posts.push(updatedPost);
+        foundWine.save((err, data)=>{
+          res.redirect('/posts/'+req.params.id);
+        });
+      }
     });
+  });
 });
 
 

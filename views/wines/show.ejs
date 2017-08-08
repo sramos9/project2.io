@@ -33,11 +33,11 @@
               <% for(let i = 0; i < wine.posts.length; i++) { %>
 								<li>
                   <p>Username: <%=wine.posts[i].name%></p>
-                  <a href="/wines/<%=wine.posts[i].id%>">
+                  <a href="/posts/<%=wine.posts[i].id%>">
                     <img src="<%=wine.posts[i].image%>"/>
                   </a>
                   <p>
-                    <a href="/wines/<%=wine.posts[i].id%>">
+                    <a href="/posts/<%=wine.posts[i].id%>">
                       About this Wine:
                     </a>
                     <%=wine.posts[i].about%>
