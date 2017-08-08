@@ -10,7 +10,6 @@ body {
   background-size: cover;
   font-size: 40px;
   color: white;
-  text-align: center;
 
 }
 
@@ -19,10 +18,12 @@ body {
   opacity: .6;
   color: white;
   font-size: 30px;
-  width: 100%;
-  height: 30%;
+  width: 90%;
+  /*height: 30%;*/
   justify-content: center;
   margin: 0 auto;
+  text-align: center;
+
 }
 
 li {
@@ -44,7 +45,12 @@ li {
   color: white;
 }
 
-
+.logout, .logout:hover, .logout:visited {
+  color: white;
+  text-decoration: none;
+  font-size: 30px;
+  float: right;
+}
 
 
 /*.jumbotron {

@@ -8,6 +8,7 @@
   </head>
   <body>
     <header>
+      <a class="logout" href="/sessions/logout">Logout</a>
       <h1>About this Post</h1>
       <%=wine.name%><br>
       <img src="<%=wine.image%>" alt="<%=wine.image%>" /><br>
@@ -19,6 +20,9 @@
           </li>
           <li>
             <a href="/posts">All Posts</a>
+          </li>
+          <li>
+              <a href="/wines">Back to Wine List</a>
           </li>
         </ul>
       </nav>
