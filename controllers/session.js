@@ -23,7 +23,7 @@ router.post('/login', (req, res) => {
                 req.session.message  = '';
                 req.session.username = req.body.username;
                 req.session.logged   = true;
-                console.log(req.session, req.body)
+                // console.log(req.session, req.body)
 
                 res.redirect('/wines')
             } else {

@@ -15,31 +15,34 @@
 
   </head>
   <body>
-    <header>
-      <div class="jumbotron">
-        <a class="logout" href="/sessions/logout">Logout</a>
-        <div class="container">
-          <h1>Wine About It</h1>
-          <h2>A place for people who love WINE and sharing (w)IN(e)FORMATION</h2>
+    <div id="wrap">
+      <header>
+        <div class="jumbotron">
+          <a class="logout" href="/sessions/logout">Logout</a>
+          <div class="container">
+            <h1>Wine About It</h1>
+            <h2>A place for people who love WINE and sharing (w)IN(e)FORMATION</h2>
+          </div>
+          <nav>
+            <ul>
+              <li>
+                <a class="link" href="/wines">Wine List</a>
+              </li>
+              <li>
+                <a class="link" href="/posts">User Posts</a>
+              </li>
+              <li>
+                <a class="link" href="/sessions/login">Login, Wino</a>
+              </li>
+              <li>
+                <a class="link" href="/sessions/register">Register, be a Wino </a>
+              </li>
+            </ul>
+          </nav>
         </div>
-        <nav>
-          <ul>
-              <li>
-                    <a class="link" href="/wines">Wine List</a>
-              </li>
-              <li>
-                    <a class="link" href="/posts">User Posts</a>
-              </li>
-              <li>
-                    <a class="link" href="/sessions/login">Login, Wino</a>
-              </li>
-              <li>
-                    <a class="link" href="/sessions/register">Register, be a Wino </a>
-              </li>
-          </ul>
-        </nav>
-      </div>
-    </header>
-  <% include ./partials/footer.ejs %>
+      </header>
+    </div>
+    <div class="clearfix"></div>
+    <% include ./partials/footer.ejs %>
   </body>
 </html>

@@ -17,22 +17,43 @@
       </nav>
     </header>
     <main>
-      <div class="new">
-        <form action="/posts" method="POST">
-        <select name="wineId" class="select">
+    <div class="new">
+<%# RIGHT HERE IS WHERE REQ IS NOT DEFINED !! %>
+        <% if(userSession.username){ %>
+          <form action="/posts" method="POST">
+          <select name="wineId" class="select">
           <% for(let i = 0; i < wines.length; i++) { %>
-                        <option value="<%=wines[i]._id%>">
-                          <%=wines[i].name%>
-                        </option>
-                    <% } %>
-        </select><br>
-        Username: <br><input type="text" name="name" ><br>
-        Image URL: <br><input type="url" name="image" /><br>
-        What did you think?: <br><textarea  name="about"></textarea><br>
-        <input type="submit" value="Post">
-      </form>
+            <option value="<%=wines[i]._id%>">
+            <%=wines[i].name%>
+            </option>
+            <% } %>
+            </select><br>
+            <p>   Wino:
+              <%=userSession.username%>
+            </p>
+            Image URL: <br><input type="url" name="image" /><br>
+            What did you think?: <br><textarea  name="about"></textarea><br>
+            <input type="submit" value="Post">
+            </form>
+
+            <%  } else { %>
+              <form action="/posts" method="POST">
+              <select name="wineId" class="select">
+              <% for(let i = 0; i < wines.length; i++) { %>
+                <option value="<%=wines[i]._id%>">
+                <%=wines[i].name%>
+                </option>
+                <% } %>
+                </select><br>
+                Username: <br><input type="text" name="name" ><br>
+                Image URL: <br><input type="url" name="image" /><br>
+                What did you think?: <br><textarea  name="about"></textarea><br>
+                <input type="submit" value="Post">
+                </form>
+                <%  } %>
+
     </div>
     </main>
-      <% include ../partials/footer.ejs %>
+    <% include ../partials/footer.ejs %>
   </body>
 </html>

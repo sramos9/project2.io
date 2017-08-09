@@ -5,7 +5,9 @@ const Post = require('../models/posts.js');
 const wineSeed = require('../models/seed.js');
 const bcrypt = require('bcrypt');
 
+// POST INDEX PAGE - SESSIONS REQUIREMENT LOGIN TO SEE POSTS
 router.get('/', (req, res) =>{
+  console.log(req.session);
   if(req.session.logged){
     Post.find({}, (err, foundPost)=>{
       res.render('posts/index.ejs', {
@@ -15,17 +17,23 @@ router.get('/', (req, res) =>{
   } else {
     res.redirect('/sessions/login')
   }
-
 });
 
+
+// CREATE NEW POST ROUTE
 router.get('/new', (req, res) =>{
   Wine.find({}, (err, allWines)=>{
+    // console.log("---------------", req.session);
     res.render('posts/new.ejs', {
-        wines: allWines
+       wines: allWines,
+       userSession: req.session
     });
   });
 });
 
+
+
+// POST NEW FROM CREATE ROUTE TO INDEX PAGE
 router.post('/', (req, res)=>{
   //console.log("this is what req.body.wineId is.....", req.body.wineId);
   Wine.findById(req.body.wineId, (err, foundWine)=>{
@@ -39,6 +47,8 @@ router.post('/', (req, res)=>{
   });
 });
 
+
+// GET ROUTE TO POST SHOW PAGE
 router.get('/:id', (req, res)=>{
   Post.findById(req.params.id, (err, foundPost)=>{
     Wine.findOne({'posts._id':req.params.id}, (err, foundWine)=>{
@@ -52,6 +62,7 @@ router.get('/:id', (req, res)=>{
 });
 
 
+// DELETE POST ROUTE
 router.delete('/:id', (req, res) =>{
   Post.findByIdAndRemove(req.params.id, (err, foundPost)=>{
     Wine.findOne({"posts._id":req.params.id}, (err, foundWine)=>{
@@ -63,6 +74,7 @@ router.delete('/:id', (req, res) =>{
   });
 });
 
+// EDIT ROUTE FROM SHOW PAGE
 router.get('/:id/edit', (req, res)=>{
   //console.log('***********************');
   Post.findById(req.params.id, (err, foundPost)=>{
@@ -84,6 +96,7 @@ router.get('/:id/edit', (req, res)=>{
 //   });
 // });
 
+// PUT EDIT ROUTE TO SEE EDIT CHANGES MADE
 router.put('/:id', (req, res)=>{
   Post.findByIdAndUpdate(req.params.id, req.body, { new: true }, (err, updatedPost)=>{
     Wine.findOne({ 'posts._id' : req.params.id }, (err, foundWine)=>{

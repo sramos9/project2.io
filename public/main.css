@@ -11,6 +11,8 @@ body {
   background-repeat: repeat;
   background-size: cover;*/
   /*margin: auto;*/
+  height: 100%;
+  padding-top: 70px;
 }
 
 h1 {
@@ -30,28 +32,15 @@ h2 {
   padding: .5em;
 }
 
-footer {
-  color: white;
-  font-size: 20px;
-  text-align: center;
-  opacity: .75;
-  margin: auto;
-  width: 100%;
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-color: black;
-  opacity: .5;
-}
 
 .navbar-inverse {
   text-decoration: none;
   list-style: none;
   padding: .5em;
-  text-align: justify;
-  margin-right: .5em;
+  text-align: center;
+  margin-right: 1em;
   color: white;
+  justify-content: space-evenly;
 
 }
 
@@ -71,7 +60,29 @@ footer {
 .new {
   justify-content: center;
   display: block;
-  border: 1px dotted black;
   padding: 3em;
   margin: 0 auto;
+}
+
+form {
+  display: inline-block;
+}
+
+
+/* Wrapper for page content to push down footer */
+#wrap {
+  min-height: 100%;
+  height: auto;
+  margin: 0 auto -60px;
+  padding: 0 0 60px;
+}
+
+/* Set the fixed height of the footer here */
+#footer {
+  height: 60px;
+  color: white;
+  text-align: center;
+  bottom: 0;
+  margin: 0 auto;
+  position: sticky;
 }
