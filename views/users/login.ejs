@@ -3,14 +3,17 @@
 <br>
 <% include ../partials/head.ejs %>
 <nav class="page-header">
+  <div class="container">
+    <img src="http://media.istockphoto.com/photos/red-wine-bottle-wine-glass-bowl-with-corks-and-corkscrew-picture-id478655150?k=6&m=478655150&s=612x612&w=0&h=ALrmRN4CEX-i-u7Ft13iYkXG7JvHJka5TROVQl_XIL8=" class="img-responsive">
+  </div>
+</nav>
+
+<nav class="page-header">
   <h1 class="reg">Login, Wino</h1>
 </nav>
 <nav class="navbar navbar-inverse">
   <a href="/" class="btn btn-default" role="button">Home</a>
-  <a href="/posts" class="btn btn-default" role="button">All Posts</a>
-  <a href="/wines" class="btn btn-default" role="button">Wine List</a>
-  <a href="/posts/new" class="btn btn-default" role="button">Create Post</a>
-  <a href="/sessions/logout" class="btn btn-default">Logout</a>
+  <a href="/sessions/register" class="btn btn-default" role="button">Register</a>
 </nav>
 
 <form  action="/sessions/login" method="POST">
@@ -18,7 +21,7 @@
   </p>
   <p>Password: <input type="password" name="password" value=""><br>
   </p>
-   <button>Login</button>
+  <button>Login</button>
 </form>
 
 
@@ -26,5 +29,5 @@
 
   <%= message %>
 
-<% } %>
-<% include ../partials/footer.ejs %>
+  <% } %>
+  <% include ../partials/footer.ejs %>

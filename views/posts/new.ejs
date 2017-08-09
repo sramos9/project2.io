@@ -1,59 +1,64 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <% include ../partials/head.ejs %>
-  </head>
-  <body>
-    <header>
-      <nav class="page-header">
-        <h1>Wine About It <br><small>Here</small></h1>
-      </nav>
-      <nav class="navbar navbar-inverse">
-        <a href="/" class="btn btn-default" role="button">Home</a>
-        <a href="/posts" class="btn btn-default" role="button">All Posts</a>
-        <a href="/wines" class="btn btn-default" role="button">Wine List</a>
-        <a href="/posts/new" class="btn btn-default" role="button">Create Post</a>
-        <a href="/sessions/logout" class="btn btn-default">Logout</a>
-      </nav>
-    </header>
-    <main>
-    <div class="new">
-<%# RIGHT HERE IS WHERE REQ IS NOT DEFINED !! %>
-        <% if(userSession.username){ %>
-          <form action="/posts" method="POST">
-          <select name="wineId" class="select">
-          <% for(let i = 0; i < wines.length; i++) { %>
-            <option value="<%=wines[i]._id%>">
-            <%=wines[i].name%>
-            </option>
-            <% } %>
-            </select><br>
-            <p>   Wino:
-              <%=userSession.username%>
-            </p>
-            Image URL: <br><input type="url" name="image" /><br>
-            What did you think?: <br><textarea  name="about"></textarea><br>
-            <input type="submit" value="Post">
-            </form>
-
-            <%  } else { %>
-              <form action="/posts" method="POST">
-              <select name="wineId" class="select">
-              <% for(let i = 0; i < wines.length; i++) { %>
-                <option value="<%=wines[i]._id%>">
-                <%=wines[i].name%>
-                </option>
-                <% } %>
-                </select><br>
-                Username: <br><input type="text" name="name" ><br>
-                Image URL: <br><input type="url" name="image" /><br>
-                What did you think?: <br><textarea  name="about"></textarea><br>
-                <input type="submit" value="Post">
-                </form>
-                <%  } %>
-
+<head>
+  <% include ../partials/head.ejs %>
+</head>
+<body>
+  <nav class="page-header">
+    <div class="container">
+      <img src="http://media.istockphoto.com/photos/red-wine-bottle-wine-glass-bowl-with-corks-and-corkscrew-picture-id478655150?k=6&m=478655150&s=612x612&w=0&h=ALrmRN4CEX-i-u7Ft13iYkXG7JvHJka5TROVQl_XIL8=" class="img-responsive">
     </div>
-    </main>
-    <% include ../partials/footer.ejs %>
-  </body>
-</html>
+  </nav>
+  <header>
+    <nav class="page-header">
+      <h1>Wine About It <br><small>Here</small></h1>
+    </nav>
+    <nav class="navbar navbar-inverse">
+      <a href="/" class="btn btn-default" role="button">Home</a>
+      <a href="/posts" class="btn btn-default" role="button">All Posts</a>
+      <a href="/wines" class="btn btn-default" role="button">Wine List</a>
+      <a href="/posts/new" class="btn btn-default" role="button">Create Post</a>
+      <a href="/sessions/logout" class="btn btn-default">Logout</a>
+    </nav>
+  </header>
+  <main>
+    <div class="new">
+      <%# RIGHT HERE IS WHERE REQ IS NOT DEFINED !! %>
+      <% if(userSession.username){ %>
+        <form action="/posts" method="POST">
+        <select name="wineId" class="select">
+        <% for(let i = 0; i < wines.length; i++) { %>
+          <option value="<%=wines[i]._id%>">
+          <%=wines[i].name%>
+          </option>
+          <% } %>
+          </select><br>
+          <p>   Wino:
+          <%=userSession.username%>
+          </p>
+          Image URL: <br><input type="url" name="image" /><br>
+          What did you think?: <br><textarea  name="about"></textarea><br>
+          <input type="submit" value="Post">
+          </form>
+
+          <%  } else { %>
+            <form action="/posts" method="POST">
+            <select name="wineId" class="select">
+            <% for(let i = 0; i < wines.length; i++) { %>
+              <option value="<%=wines[i]._id%>">
+              <%=wines[i].name%>
+              </option>
+              <% } %>
+              </select><br>
+              Username: <br><input type="text" name="name" ><br>
+              Image URL: <br><input type="url" name="image" /><br>
+              What did you think?: <br><textarea  name="about"></textarea><br>
+              <input type="submit" value="Post">
+              </form>
+              <%  } %>
+
+            </div>
+          </main>
+          <% include ../partials/footer.ejs %>
+        </body>
+        </html>

@@ -7,13 +7,25 @@
 
 body {
   background-color: lightgrey;
-  /*background-image: url('http://www.lodiwine.com/assets/images/contentblock/photos/IMG_4451.jpg');
-  background-repeat: repeat;
-  background-size: cover;*/
-  /*margin: auto;*/
+  /*background-image: url('http://media.istockphoto.com/photos/red-wine-bottle-wine-glass-bowl-with-corks-and-corkscrew-picture-id478655150?k=6&m=478655150&s=612x612&w=0&h=ALrmRN4CEX-i-u7Ft13iYkXG7JvHJka5TROVQl_XIL8=');
+  background-position: center;
+  background-repeat: no-repeat center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;*/
   height: 100%;
   padding-top: 70px;
 }
+
+.img-responsive  {
+display: inline-block;
+align-content: stretch;
+width: 100%;
+max-height: 40%:
+margin: 0 auto;
+top: 0;
+}
+
 
 h1 {
   font-size: 40px;
@@ -67,7 +79,10 @@ h2 {
 form {
   display: inline-block;
 }
-
+.row {
+  align-items: center;
+  position: sticky;
+}
 
 /* Wrapper for page content to push down footer */
 #wrap {

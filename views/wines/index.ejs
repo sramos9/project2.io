@@ -8,7 +8,10 @@
   <body>
     <header>
       <nav class="page-header">
-        <h1>Wine about It</h1>
+        <div class="container">
+              <img src="http://media.istockphoto.com/photos/red-wine-bottle-wine-glass-bowl-with-corks-and-corkscrew-picture-id478655150?k=6&m=478655150&s=612x612&w=0&h=ALrmRN4CEX-i-u7Ft13iYkXG7JvHJka5TROVQl_XIL8=" class="img-responsive">
+          <h1>Wine about It</h1>
+        </div>
       </nav>
       <nav class="navbar navbar-inverse">
         <a href="/" class="btn btn-default" role="button">Home</a>
@@ -19,15 +22,21 @@
       </nav>
     </header>
     <main>
-      <h2>Wine List</h2>
-      <ul>
-        <% for(let i = 0; i < wines.length; i++){ %>
-					<li>
-						<a href="/wines/<%=wines[i]._id%>"><%=wines[i].name%></a>
-					</li>
-				<% } %>
-      </ul>
+      <div class="jumbotron">
+        <div class="container">
+          <h2>Wine List</h2>
+          <p>I know there are many wine varietals not on this list but this is a SERIOUS wine site for SERIOUS Winos (who take themselves far too seriously,) as such, these are the most popular and will be the focus of this site.</p>
+          <ul class="list-group">
+            <% for(let i = 0; i < wines.length; i++){ %>
+    					<li class="list-group-item">
+    						<a href="/wines/<%=wines[i]._id%>"><%=wines[i].name%></a>
+    					</li>
+    				<% } %>
+          </ul>
+        </div>
+      </div>
     </main>
       <% include ../partials/footer.ejs %>
+
   </body>
 </html>

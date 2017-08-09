@@ -1,42 +1,45 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <% include ../partials/head.ejs %>
+<head>
+<% include ../partials/head.ejs %>
 
-  </head>
-  <body>
-    <header>
-      <nav class="page-header">
-        <h1>Wine About It <br><small>Posts</small> </h1>
-      </nav>
-      <nav class="navbar navbar-inverse">
-        <a href="/" class="btn btn-default" role="button">Home</a>
-        <a href="/posts" class="btn btn-default" role="button">All Posts</a>
-        <a href="/wines" class="btn btn-default" role="button">Wine List</a>
-        <a href="/posts/new" class="btn btn-default" role="button">Create Post</a>
-        <a href="/sessions/logout" class="btn btn-default">Logout</a>
-      </nav>
-    </header>
-    <main>
-        <h2>All Posts</h2>
+</head>
+<body>
+  <nav class="page-header">
+    <div class="container">
+      <img src="http://media.istockphoto.com/photos/red-wine-bottle-wine-glass-bowl-with-corks-and-corkscrew-picture-id478655150?k=6&m=478655150&s=612x612&w=0&h=ALrmRN4CEX-i-u7Ft13iYkXG7JvHJka5TROVQl_XIL8=" class="img-responsive">
+    </div>
+  </nav>
+  <header>
+    <nav class="page-header">
+      <h1>Wine About It <br><small>Posts</small> </h1>
+    </nav>
+    <nav class="navbar navbar-inverse">
+      <a href="/" class="btn btn-default" role="button">Home</a>
+      <a href="/posts" class="btn btn-default" role="button">All Posts</a>
+      <a href="/wines" class="btn btn-default" role="button">Wine List</a>
+      <a href="/posts/new" class="btn btn-default" role="button">Create Post</a>
+      <a href="/sessions/logout" class="btn btn-default">Logout</a>
+    </nav>
+  </header>
+  <main>
+    <h2>All Posts</h2>
+    <div class="row">
+      <div class="col-sm-6 col-sm-3 center">
+        <div class="thumbnail center">
+          <% for(let i = 0; i < posts.length; i++){ %>
+          <div class="caption">
+            <a href="/posts/<%=posts[i]._id%>" ><img src="<%=posts[i].image%>" class="btn btn-primary" role="button"/></a>
+            <h3>Wino comments:</h3>
+            <a href="/posts/<%=posts[i]._id%>"><%=posts[i].about%></a><hr>
 
-        <div class="row">
-          <div class="col-xs-6 col-md-3">
-            <div class="thumbnail">
-              <% for(let i = 0; i < posts.length; i++){ %>
-              <div class="caption">
-                <a href="/posts/<%=posts[i]._id%>" ><img src="<%=posts[i].image%>" class="btn btn-primary" role="button"/></a>
-                 <h3>Wino comments:</h3>
-                 <a href="/posts/<%=posts[i]._id%>"><%=posts[i].about%></a><hr>
-
-                 <% } %>
-              </div>
-            </div>
+            <% } %>
           </div>
-
         </div>
+      </div>
+    </div>
 
-    </main>
-      <% include ../partials/footer.ejs %>
-  </body>
+  </main>
+  <% include ../partials/footer.ejs %>
+</body>
 </html>
