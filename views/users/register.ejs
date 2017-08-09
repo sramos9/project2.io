@@ -1,6 +1,17 @@
 <br>
 <br>
 <br>
+<% include ../partials/head.ejs %>
+<nav class="page-header">
+  <h1 class="reg">Register to be a Wino!</h1>
+</nav>
+<nav class="navbar navbar-inverse">
+  <a href="/" class="btn btn-default" role="button">Home</a>
+  <a href="/posts" class="btn btn-default" role="button">All Posts</a>
+  <a href="/wines" class="btn btn-default" role="button">Wine List</a>
+  <a href="/posts/new" class="btn btn-default" role="button">Create Post</a>
+  <a href="/sessions/logout" class="btn btn-default">Logout</a>
+</nav>
 <form action="/sessions/register" method="POST">
   <p>Username: <input type="text" name="username" value=""> <br>
   </p>
@@ -8,3 +19,4 @@
   </p>
    <button>Register</button>
 </form>
+<% include ../partials/footer.ejs %>

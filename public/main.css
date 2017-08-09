@@ -1,10 +1,16 @@
 * {
   font-family:  'Open Sans Condensed', sans-serif;
   font-size: 20px;
+  list-style: none;
+  text-decoration: none;
 }
 
 body {
   background-color: lightgrey;
+  /*background-image: url('http://www.lodiwine.com/assets/images/contentblock/photos/IMG_4451.jpg');
+  background-repeat: repeat;
+  background-size: cover;*/
+  /*margin: auto;*/
 }
 
 h1 {
@@ -29,8 +35,43 @@ footer {
   font-size: 20px;
   text-align: center;
   opacity: .75;
+  margin: auto;
+  width: 100%;
   position: absolute;
   right: 0;
   bottom: 0;
   left: 0;
+  background-color: black;
+  opacity: .5;
+}
+
+.navbar-inverse {
+  text-decoration: none;
+  list-style: none;
+  padding: .5em;
+  text-align: justify;
+  margin-right: .5em;
+  color: white;
+
+}
+
+.navbar-inverse:hover, .navbar-inverse:visited {
+  color: lightgrey;
+}
+
+.page-header {
+  text-align: center;
+}
+
+.btn .btn-default {
+  text-align: center;
+  justify-content: center;
+}
+
+.new {
+  justify-content: center;
+  display: block;
+  border: 1px dotted black;
+  padding: 3em;
+  margin: 0 auto;
 }

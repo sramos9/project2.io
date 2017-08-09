@@ -5,7 +5,6 @@
 
 body {
   background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDy421KbMqBDSbIUgXjyX2CvJnxI5qwMztpq8ZHl4b3PT7Psr_5A');
-  /*background-image: url('http://www.lodiwine.com/assets/images/contentblock/photos/IMG_4451.jpg');*/
   background-repeat: repeat;
   background-size: cover;
 }
@@ -52,6 +51,7 @@ li {
   font-size: 30px;
   float: right;
   padding: .5em;
+  margin-top: 5px;
 }
 
 footer {
@@ -59,8 +59,12 @@ footer {
   font-size: 20px;
   text-align: center;
   opacity: .75;
+  margin: auto;
+  width: 100%;
   position: absolute;
   right: 0;
   bottom: 0;
   left: 0;
+  background-color: black;
+  opacity: .5;
 }

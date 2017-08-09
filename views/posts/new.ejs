@@ -5,36 +5,33 @@
   </head>
   <body>
     <header>
-      <a class="logout" href="/sessions/logout">Logout</a>
-        <h1>New Post: Wine About It</h1>
-        <nav>
-          <ul>
-            <li>
-              <a href="/">Home</a>
-            </li>
-            <li>
-              <a href="/posts">All Posts</a>
-            </li>
-            <li>
-                <a href="/wines">Back to Wine List</a>
-            </li>
-          </ul>
-        </nav>
+      <nav class="page-header">
+        <h1>Wine About It <br><small>Here</small></h1>
+      </nav>
+      <nav class="navbar navbar-inverse">
+        <a href="/" class="btn btn-default" role="button">Home</a>
+        <a href="/posts" class="btn btn-default" role="button">All Posts</a>
+        <a href="/wines" class="btn btn-default" role="button">Wine List</a>
+        <a href="/posts/new" class="btn btn-default" role="button">Create Post</a>
+        <a href="/sessions/logout" class="btn btn-default">Logout</a>
+      </nav>
     </header>
     <main>
-      <form action="/posts" method="POST">
-        <select name="wineId">
+      <div class="new">
+        <form action="/posts" method="POST">
+        <select name="wineId" class="select">
           <% for(let i = 0; i < wines.length; i++) { %>
                         <option value="<%=wines[i]._id%>">
                           <%=wines[i].name%>
                         </option>
                     <% } %>
         </select><br>
-        <input type="text" name="name" value="Username" /><br>
-        <input type="url" name="image" value="url" /><br>
-        <textarea name="about">About/Comments about this Wine</textarea><br>
+        Username: <br><input type="text" name="name" ><br>
+        Image URL: <br><input type="url" name="image" /><br>
+        What did you think?: <br><textarea  name="about"></textarea><br>
         <input type="submit" value="Post">
       </form>
+    </div>
     </main>
       <% include ../partials/footer.ejs %>
   </body>

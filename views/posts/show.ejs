@@ -5,45 +5,39 @@
   </head>
   <body>
     <header>
-      <a class="logout" href="/sessions/logout">Logout</a>
-      <h1>About this Post</h1>
-      <%=wine.name%><br>
+      <nav class="navbar navbar-inverse">
+        <a href="/" class="btn btn-default" role="button">Home</a>
+        <a href="/posts" class="btn btn-default" role="button">All Posts</a>
+        <a href="/wines" class="btn btn-default" role="button">Wine List</a>
+        <a href="/posts/new" class="btn btn-default" role="button">Create Post</a>
+        <a href="/sessions/logout" class="btn btn-default">Logout</a>
+      </nav>
+      <nav class="page-header">
+        <h1><%=wine.name%></h1>
+      </nav>
       <img src="<%=wine.image%>" alt="<%=wine.image%>" /><br>
       <%=wine.about%><br>
-      <nav>
-        <ul>
-          <li>
-            <a href="/">Home</a>
-          </li>
-          <li>
-            <a href="/posts">All Posts</a>
-          </li>
-          <li>
-              <a href="/wines">Back to Wine List</a>
-          </li>
-        </ul>
-      </nav>
+
     </header>
     <main>
-      <section>
         <h2>Posts about <%=wine.name%></h2>
-        <p>
-          <%=post.name%> <br>
-        </p>
-        <img src="<%=post.image%>"/><br>
-        <p>
-          <%=post.about%> <br>
-        </p>
-      </section>
-      <section>
-        <form action="/posts/<%=post._id%>?_method=DELETE" method="POST">
-          <input type="submit" value="Delete this Post">
-        </form>
-      </section>
-      <section>
-        <a href="/posts/<%=post._id%>/edit">Edit this post</a>
-      </section>
+        <div class="row">
+          <div class="col-sm-6 col-md-4">
+            <div class="thumbnail">
+              <img src="<%=post.image%>">
+              <div class="caption">
+                <h3>Wino Comment:</h3>
+                <p><%=post.about%></p>
+                <p><a href="/posts/<%=post._id%>/edit" class="btn btn-default" role="button">Edit</a>
+                  <form action="/posts/<%=post._id%>?_method=DELETE" method="POST">
+                  <input class="btn btn-default" type="submit" value="Delete">
+                </form>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
     </main>
-      <% include ../partials/footer.ejs %>
   </body>
+  <% include ../partials/footer.ejs %>
 </html>
