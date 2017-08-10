@@ -24,14 +24,31 @@
         <nav class="page-header">
           <h1><%=wine.name%></h1>
         </nav>
-        <img src="<%=wine.image%>" alt="<%=wine.image%>" /><br>
-        <%=wine.about%><br>
+        <%# BEGINNING OF SEED DATA      %>
+            <div class="jumbotron jseed">
+              <div class="container seed">
+                    <div class="thumbnail seedImg" id="test">
+                        <img class="seedImg" src="<%=wine.image%>" alt="<%=wine.name%>"/>
+                    </div>
+                    <br>
+                </div>
+              <div class="seedData">
+                <p class="seedText">
+                  <%=wine.about%><hr>
+                </p>
+                </div>
+            </div>
+
+        <%# END OF SEE DATA      %>
 
       </header>
       <main>
-          <h2>Posts about <%=wine.name%></h2>
-          <div class="row">
-            <div class="col-sm-6 col-md-4">
+        <div class="container">
+
+
+        <h2 style="padding-bottom: 3%; text-align: center;">Wino Post About <%=wine.name%></h2>
+          <%# <div class="row" style="padding-left: 1em;">%>
+            <%# <div class="col-sm-6 col-md-4">%>
               <div class="thumbnail">
                 <img src="<%=post.image%>">
                 <div class="caption">
@@ -42,8 +59,9 @@
                     <input class="btn btn-default" role="button" type="submit" value="Delete">
                   </form>
 
-                </div>
-              </div>
+          </div>
+                <%# </div>%>
+              <%# </div>%>
             </div>
           </div>
       </main>

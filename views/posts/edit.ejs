@@ -11,7 +11,7 @@
   </nav>
   <header>
     <nav class="page-header">
-      <h1>Edit Post</h1>
+      <h1>Edit This Post</h1>
     </nav>
     <nav class="navbar navbar-inverse">
       <a href="/" class="btn btn-default" role="button">Home</a>
@@ -23,54 +23,100 @@
 
   </header>
   <main>
-    <h2>Edit This Post</h2>
-     <br>
-     <% if(userSession.username){ %>
-       <form action="/posts/<%=post._id%>?_method=PUT" method="POST">
-       <select name="wineId">
-        <% for(let i = 0; i < wine.length; i++) { %>
-          <option value="<%=wine[i]._id%>" =
-          <% if(wine[i]._id.toString() === postWine._id.toString()){ %>
-            selected
-            <% } %>
-            >
-            <%=wine[i].name%>
-            </option> =
-            <% } %>
+    <br>
+    <% if(userSession.username){ %>
+      <form action="/posts/<%=post._id%>?_method=PUT" method="POST">
+      <select name="wineId">
+      <% for(let i = 0; i < wine.length; i++) { %>
+        <option value="<%=wine[i]._id%>" =
+        <% if(wine[i]._id.toString() === postWine._id.toString()){ %>
+          selected
+          <% } %>
+          >
+          <%=wine[i].name%>
+          </option> =
+          <% } %>
           </select><br>
-          <p>   Wino:
-            <%=userSession.username%>
-          </p>
-          <br>
-          <input type="url" name="image" value="url"><br>
-          <textarea name="about"><%=post.about%></textarea><br>
+          <div class="input-group">
+          <span class="input-group-addon">
+          <span class="glyphicon glyphicon-user"></span>
+          </span>
+          Wino: <%=userSession.username%>
+          </div>
 
-            <input type="submit" value="Update Post">
-        </form>
-        <%  } else { %>
-          <select name="wineId">
-           <% for(let i = 0; i < wine.length; i++) { %>
-             <option value="<%=wine[i]._id%>" =
-             <% if(wine[i]._id.toString() === postWine._id.toString()){ %>
-               selected
-               <% } %>
-               >
-               <%=wine[i].name%>
-               </option> =
-               <% } %>
-             </select><br>
-             <p>   Wino:
-               <%=userSession.username%>
-             </p>
-             <br>
-             <input type="url" name="image" value="url"><br>
-             <textarea name="about"><%=post.about%></textarea><br>
+          <div class="input-group">
+          <span class="input-group-addon">
+          <span class="glyphicon glyphicon-glass"></span>
+          </span>
+          <input type="url" class="form-control" name="image" placeholder="Image URL"> <br>
+          </div>
 
-               <input type="submit" value="Update Post">
-           </form>
-           <%  } %>
-      </main>
-      <% include ../partials/footer.ejs %>
-    </body>
+          <div class="input-group">
+          <span class="input-group-addon">
+          <span class="glyphicon glyphicon-pencil"></span>
+          </span>
+          <input class="form-control" type="text" name="about" placeholder="<%=post.about%>"> <br>
+          </div>
 
-    </html>
+
+          <div class="input-group">
+          <span class="input-group-addon">
+          <span class="glyphicon glyphicon-floppy-open"></span>
+          </span>
+          <input type="submit" class="form-control" value="Update Post"> <br>
+          </div>
+          </div>
+          </form>
+          <%  } else { %>
+
+            <select name="wineId">
+            <select name="wineId">
+            <% for(let i = 0; i < wine.length; i++) { %>
+              <option value="<%=wine[i]._id%>" =
+              <% if(wine[i]._id.toString() === postWine._id.toString()){ %>
+                selected
+                <% } %>
+                >
+                <%=wine[i].name%>
+                </option> =
+                <% } %>
+                </select><br>
+
+                <div class="input-group">
+                <span class="input-group-addon">
+                <span class="glyphicon glyphicon-user"></span>
+                </span>
+                Wino: <%=userSession.username%>
+                </div>
+
+                <div class="input-group">
+                <span class="input-group-addon">
+                <span class="glyphicon glyphicon-glass"></span>
+                </span>
+                <input type="url" class="form-control" name="image" placeholder="Image URL"> <br>
+                </div>
+
+                <div class="input-group">
+                <span class="input-group-addon">
+                <span class="glyphicon glyphicon-pencil"></span>
+                </span>
+                <input class="form-control" type="text" name="about" placeholder="<%=post.about%>"> <br>
+                </div>
+
+
+                <div class="input-group">
+                <span class="input-group-addon">
+                <span class="glyphicon glyphicon-floppy-open"></span>
+                </span>
+                <input type="submit" class="form-control" value="Update Post"> <br>
+                </div>
+                </div>
+                </form>
+                <%  } %>
+
+
+              </main>
+              <% include ../partials/footer.ejs %>
+            </body>
+
+            </html>

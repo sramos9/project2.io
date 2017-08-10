@@ -14,7 +14,7 @@ body {
   -moz-background-size: cover;
   -o-background-size: cover;*/
   height: 100%;
-  padding-top: 70px;
+  padding-top: 30px;
 }
 
 .img-responsive  {
@@ -35,6 +35,10 @@ h2 {
   font-size: 30px;
 }
 
+img.userImg {
+width: 400px;
+height: 400px;
+}
 
 .logout, .logout:hover, .logout:visited {
   color: white;
@@ -77,29 +81,85 @@ h2 {
 }
 
 form {
-  display: inline-block;
+  /*display: table;*/
+  width: 40%;
+  position: inherit;
+  margin: 0 auto;
+  padding-bottom: 10%;
+  padding-top: 2%;
 }
-.row {
-  align-items: center;
-  position: sticky;
-}
+
 
 .centerList {
   text-align: center;
   font-weight: bold;
 }
+
+
+
+#test {
+  height: 100%;
+  width: max-content;
+}
+
+#thisWine {
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+.seedImg {
+  height: 20vh;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.jumbotron .jseed {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+.container .seed {
+  height: 20vh;
+  width: 40vh;
+  justify-content: space-between;
+
+}
+
+.seedData {
+  width: 60vh;
+  text-align: center;
+  margin: 0 auto;
+  padding: .5% 20px;
+}
+
+.winePosts {
+align-items: center;
+padding-left: .5em;
+display: inline-flex;
+}
+
+#allPosts {
+padding-left: .5em;
+align-content: center;
+justify-content: center;
+}
+
+
 /* Wrapper for page content to push down footer */
 #wrap {
   min-height: 100%;
   height: auto;
   margin: 0 auto -60px;
   padding: 0 0 60px;
+
 }
 
 /* Set the fixed height of the footer here */
 #footer {
   height: 60px;
-  color: white;
+  color: darkslategrey;
   text-align: center;
   bottom: 0;
   margin: 0 auto;

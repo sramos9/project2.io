@@ -12,7 +12,7 @@
   </nav>
   <header>
     <div class="page-header">
-      <h1>Wine About It - This Wine</h1>
+      <h1>Wine About <%=wine.name%></h1>
     </div>
     <nav class="navbar navbar-inverse">
       <a href="/" class="btn btn-default" role="button">Home</a>
@@ -24,19 +24,41 @@
   </header>
   <main>
     <section>
-      <h2>Posts About <%=wine.name%>
-      </h2>
-      <img src="<%=wine.image%>" alt="<%=wine.name%>" />
-      <p>
-        <%=wine.about%>
-      </p>
+<%# BEGINNING OF SEED DATA      %>
+    <div class="jumbotron jseed">
+      <div class="container seed">
+        <h2 id="thisWine" style="text-align: center;">About <%=wine.name%>
+        </h2>
+        <br>
+        <%# <div class="col-sm-3 col-md-3 col-xs-3">%>
+            <div class="thumbnail seedImg" id="test">
+              <%# <div class="col-sm-6 col-md-6 col-xs-12 image-container">%>
+                <img class="seedImg" src="<%=wine.image%>" alt="<%=wine.name%>"/>
+              <%# </div>%>
+            </div>
+            <br>
+          <%# </div>%>
+        </div>
+      <div class="seedData">
+        <%# <div class="col-sm-3 col-md-3 col-xs-3">%>
 
+                <p class="seedText">
+                  <%=wine.about%><hr>
+                </p>
+        </div>
+      <%# </div>%>
+    </div>
+
+<%# END OF SEE DATA      %>
       <ul>
         <% for(let i = 0; i < wine.posts.length; i++) { %>
+        <div class="winePosts">
           <li>
-          <p>Username: <%=wine.posts[i].name%></p>
+
+          <br>
+          <p>Wino: <%=wine.posts[i].name%></p>
           <a href="/posts/<%=wine.posts[i].id%>">
-          <img src="<%=wine.posts[i].image%>"/>
+          <img class="userImg" src="<%=wine.posts[i].image%>"/>
           </a>
           <p>
           <a href="/posts/<%=wine.posts[i].id%>">
@@ -50,6 +72,7 @@
           </form>
           </li>
           <% } %>
+        </div>
         </ul>
 
       </section>

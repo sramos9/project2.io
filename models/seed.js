@@ -48,7 +48,7 @@ module.exports = [
     {
       name: "Prosecco",
       image: "http://www.wines.com/magical/wp-content/uploads/champagne-glass.jpg",
-      about: "Italian wine, generally a dry sparkling wine, made from a variety of white grape of the same name.  Depending on their sweetness, proseccos are labeled “brut” (up to 15 g of residual sugar), “extra dry” (12?20 g) or “dry” (20?35 g). Intensely aromatic and crisp, bringing to mind yellow apple, pear, white peach and apricot. "
+      about: "Italian wine, generally a dry sparkling wine, made from a variety of white grape of the same name.  Depending on their sweetness, proseccos are labeled “brut” (up to 15 g of residual sugar), “extra dry” (12-20 g) or “dry” (20-35 g). Intensely aromatic and crisp, bringing to mind yellow apple, pear, white peach and apricot. "
     },
     {
       name: "Champagne",
