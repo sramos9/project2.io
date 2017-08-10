@@ -32,6 +32,7 @@ li {
   color: white;
   font-size: 30px;
   display: inline-block;
+  margin: 0 auto;
 }
 
 .link:visited {
