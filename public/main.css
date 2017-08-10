@@ -84,6 +84,10 @@ form {
   position: sticky;
 }
 
+.centerList {
+  text-align: center;
+  font-weight: bold;
+}
 /* Wrapper for page content to push down footer */
 #wrap {
   min-height: 100%;

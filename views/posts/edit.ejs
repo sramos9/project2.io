@@ -24,8 +24,10 @@
   </header>
   <main>
     <h2>Edit This Post</h2>
-    <form action="/posts/<%=post._id%>?_method=PUT" method="POST"> <br>
-      <select name="wineId">
+     <br>
+     <% if(userSession.username){ %>
+       <form action="/posts/<%=post._id%>?_method=PUT" method="POST">
+       <select name="wineId">
         <% for(let i = 0; i < wine.length; i++) { %>
           <option value="<%=wine[i]._id%>" =
           <% if(wine[i]._id.toString() === postWine._id.toString()){ %>
@@ -36,11 +38,37 @@
             </option> =
             <% } %>
           </select><br>
-          <input type="text" name="name" value="<%=post.name%>" /> <br>
+          <p>   Wino:
+            <%=userSession.username%>
+          </p>
+          <br>
           <input type="url" name="image" value="url"><br>
           <textarea name="about"><%=post.about%></textarea><br>
-          <input type="submit" value="Update Post">
+
+            <input type="submit" value="Update Post">
         </form>
+        <%  } else { %>
+          <select name="wineId">
+           <% for(let i = 0; i < wine.length; i++) { %>
+             <option value="<%=wine[i]._id%>" =
+             <% if(wine[i]._id.toString() === postWine._id.toString()){ %>
+               selected
+               <% } %>
+               >
+               <%=wine[i].name%>
+               </option> =
+               <% } %>
+             </select><br>
+             <p>   Wino:
+               <%=userSession.username%>
+             </p>
+             <br>
+             <input type="url" name="image" value="url"><br>
+             <textarea name="about"><%=post.about%></textarea><br>
+
+               <input type="submit" value="Update Post">
+           </form>
+           <%  } %>
       </main>
       <% include ../partials/footer.ejs %>
     </body>

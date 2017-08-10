@@ -42,7 +42,7 @@
           </form>
 
           <%  } else { %>
-            <form action="/posts" method="POST">
+
             <select name="wineId" class="select">
             <% for(let i = 0; i < wines.length; i++) { %>
               <option value="<%=wines[i]._id%>">
@@ -53,6 +53,7 @@
               Username: <br><input type="text" name="name" ><br>
               Image URL: <br><input type="url" name="image" /><br>
               What did you think?: <br><textarea  name="about"></textarea><br>
+              <form class="btn btn-default" role="button" action="/posts" method="POST">
               <input type="submit" value="Post">
               </form>
               <%  } %>

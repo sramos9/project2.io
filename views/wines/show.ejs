@@ -44,9 +44,9 @@
           </a>
           <%=wine.posts[i].about%>
           </p>
-          <a href="/posts/<%=wine.posts[i]._id%>/edit">Edit Posts</a>
+          <a href="/posts/<%=wine.posts[i]._id%>/edit" class="btn btn-default" role="button">Edit Posts</a>
           <form action="/posts/<%=wine.posts[i]._id%>?_method=DELETE" method="POST">
-          <input type="submit" value="Delete Post">
+          <input class="btn btn-default" role="button" type="submit" value="Delete Post">
           </form>
           </li>
           <% } %>

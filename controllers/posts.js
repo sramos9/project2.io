@@ -10,6 +10,7 @@ router.get('/', (req, res) =>{
   console.log(req.session);
   if(req.session.logged){
     Post.find({}, (err, foundPost)=>{
+      console.log(foundPost);
       res.render('posts/index.ejs', {
           posts: foundPost
       });
@@ -37,8 +38,9 @@ router.get('/new', (req, res) =>{
 router.post('/', (req, res)=>{
   //console.log("this is what req.body.wineId is.....", req.body.wineId);
   Wine.findById(req.body.wineId, (err, foundWine)=>{
-    console.log(foundWine);
+   req.body.name = req.session.username
     Post.create(req.body, (err, createdPost)=>{
+      console.log("*************", createdPost);
       foundWine.posts.push(createdPost);
       foundWine.save((err, data)=>{
         res.redirect('/posts');
@@ -83,7 +85,8 @@ router.get('/:id/edit', (req, res)=>{
         res.render('posts/edit.ejs', {
           post: foundPost,
           wine: allWines,
-          postWine: foundPostWine
+          postWine: foundPostWine,
+          userSession: req.session
         });
       });
     });
