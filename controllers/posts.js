@@ -12,7 +12,7 @@ router.get('/', (req, res) =>{
     Post.find({}, (err, foundPost)=>{
       console.log(foundPost);
       res.render('posts/index.ejs', {
-          posts: foundPost
+        posts: foundPost
       });
     });
   } else {
@@ -26,8 +26,8 @@ router.get('/new', (req, res) =>{
   Wine.find({}, (err, allWines)=>{
     // console.log("---------------", req.session);
     res.render('posts/new.ejs', {
-       wines: allWines,
-       userSession: req.session
+      wines: allWines,
+      userSession: req.session
     });
   });
 });
@@ -38,7 +38,7 @@ router.get('/new', (req, res) =>{
 router.post('/', (req, res)=>{
   //console.log("this is what req.body.wineId is.....", req.body.wineId);
   Wine.findById(req.body.wineId, (err, foundWine)=>{
-   req.body.name = req.session.username
+    req.body.name = req.session.username
     Post.create(req.body, (err, createdPost)=>{
       console.log("*************", createdPost);
       foundWine.posts.push(createdPost);
@@ -56,8 +56,8 @@ router.get('/:id', (req, res)=>{
     Wine.findOne({'posts._id':req.params.id}, (err, foundWine)=>{
       res.render('posts/show.ejs',
       {
-          wine: foundWine,
-          post: foundPost
+        wine: foundWine,
+        post: foundPost
       });
     });
   });

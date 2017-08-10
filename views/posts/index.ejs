@@ -25,19 +25,19 @@
   <main>
 
 
-      <%# <h2 style="padding-left: 1em;">All Posts</h2>%>
-      <div class="col-sm-4 col-md-4 col-xs-4">
-        <div class="thumbnail center">
-          <% for(let i = 0; i < posts.length; i++){ %>
+    <%# <h2 style="padding-left: 1em;">All Posts</h2>%>
+    <div class="col-sm-4 col-md-4 col-xs-4">
+      <div class="thumbnail center">
+        <% for(let i = 0; i < posts.length; i++){ %>
           <div class="caption" id="allPosts">
-            <a href="/posts/<%=posts[i]._id%>" ><img src="<%=posts[i].image%>" class="btn btn-primary" role="button"/></a>
-            <h3>Wino comments:</h3>
-            <a href="/posts/<%=posts[i]._id%>"><%=posts[i].about%></a><hr>
+          <a href="/posts/<%=posts[i]._id%>" ><img src="<%=posts[i].image%>" class="btn btn-primary" role="button"/></a>
+          <h3>Wino comments:</h3>
+          <a href="/posts/<%=posts[i]._id%>"><%=posts[i].about%></a><hr>
 
-            <% } %>
-          </div>
+          <% } %>
         </div>
       </div>
+    </div>
 
 
   </main>

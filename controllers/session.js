@@ -17,28 +17,28 @@ router.get('/register', (req, res) => {
 router.post('/login', (req, res) => {
   User.findOne({username: req.body.username}, (err, user) => {
 
-      if(user){
-                     //now compare hash with the password from the form
-            if(bcrypt.compareSync(req.body.password, user.password)){
-                req.session.message  = '';
-                req.session.username = req.body.username;
-                req.session.logged   = true;
-                // console.log(req.session, req.body)
+    if(user){
+      //now compare hash with the password from the form
+      if(bcrypt.compareSync(req.body.password, user.password)){
+        req.session.message  = '';
+        req.session.username = req.body.username;
+        req.session.logged   = true;
+        // console.log(req.session, req.body)
 
-                res.redirect('/wines')
-            } else {
-              console.log('else in bcrypt compare')
-              req.session.message = 'Username or password are incorrect';
-              res.redirect('/sessions/login')
-
-            }
-
+        res.redirect('/wines')
       } else {
+        console.log('else in bcrypt compare')
+        req.session.message = 'Username or password are incorrect';
+        res.redirect('/sessions/login')
 
-          req.session.message = 'Username or password are incorrect';
-          res.redirect('/sessions/login')
+      }
 
-      } //end of if user
+    } else {
+
+      req.session.message = 'Username or password are incorrect';
+      res.redirect('/sessions/login')
+
+    } //end of if user
   });
 
 })

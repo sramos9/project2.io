@@ -24,35 +24,35 @@
   </header>
   <main>
     <section>
-<%# BEGINNING OF SEED DATA      %>
-    <div class="jumbotron jseed">
-      <div class="container seed">
-        <h2 id="thisWine" style="text-align: center;">About <%=wine.name%>
-        </h2>
-        <br>
-        <%# <div class="col-sm-3 col-md-3 col-xs-3">%>
-            <div class="thumbnail seedImg" id="test">
-              <%# <div class="col-sm-6 col-md-6 col-xs-12 image-container">%>
-                <img class="seedImg" src="<%=wine.image%>" alt="<%=wine.name%>"/>
-              <%# </div>%>
-            </div>
-            <br>
+      <%# BEGINNING OF SEED DATA      %>
+      <div class="jumbotron jseed">
+        <div class="container seed">
+          <h2 id="thisWine" style="text-align: center;">About <%=wine.name%>
+          </h2>
+          <br>
+          <%# <div class="col-sm-3 col-md-3 col-xs-3">%>
+          <div class="thumbnail seedImg" id="test">
+            <%# <div class="col-sm-6 col-md-6 col-xs-12 image-container">%>
+            <img class="seedImg" src="<%=wine.image%>" alt="<%=wine.name%>"/>
+            <%# </div>%>
+          </div>
+          <br>
           <%# </div>%>
         </div>
-      <div class="seedData">
-        <%# <div class="col-sm-3 col-md-3 col-xs-3">%>
+        <div class="seedData">
+          <%# <div class="col-sm-3 col-md-3 col-xs-3">%>
 
-                <p class="seedText">
-                  <%=wine.about%><hr>
-                </p>
+          <p class="seedText">
+            <%=wine.about%><hr>
+          </p>
         </div>
-      <%# </div>%>
-    </div>
+        <%# </div>%>
+      </div>
 
-<%# END OF SEE DATA      %>
+      <%# END OF SEE DATA      %>
       <ul>
         <% for(let i = 0; i < wine.posts.length; i++) { %>
-        <div class="winePosts">
+          <div class="winePosts">
           <li>
 
           <br>
@@ -66,18 +66,20 @@
           </a>
           <%=wine.posts[i].about%>
           </p>
-          <a href="/posts/<%=wine.posts[i]._id%>/edit" class="btn btn-default" role="button">Edit Posts</a>
+          <div class="btn-group" role="group">
+          <a href="/posts/<%=wine.posts[i]._id%>/edit" class="btn btn-default" id="fixBtn" role="button">Edit Posts</a>
           <form action="/posts/<%=wine.posts[i]._id%>?_method=DELETE" method="POST">
-          <input class="btn btn-default" role="button" type="submit" value="Delete Post">
+          <input class="btn btn-default" id="fixBtn" role="button" type="submit" value="Delete Post">
           </form>
+          </div>
           </li>
           <% } %>
         </div>
-        </ul>
+      </ul>
 
-      </section>
+    </section>
 
-    </main>
-    <% include ../partials/footer.ejs %>
-  </body>
-  </html>
+  </main>
+  <% include ../partials/footer.ejs %>
+</body>
+</html>

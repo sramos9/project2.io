@@ -10,8 +10,8 @@ const bcrypt = require('bcrypt');
 router.get('/', (req, res) =>{
   Wine.find({}, (err, foundWines)=>{
     res.render('./wines/index.ejs', {
-        wines: foundWines
-      });
+      wines: foundWines
+    });
   });
 });
 
@@ -25,10 +25,10 @@ router.post('/', (req, res) =>{
 // seed data route to seed.js file
 router.get('/seed', (req, res)=>{
   Wine.insertMany(wineSeed, (err, wines) =>{
-      if(err) {console.log(err); } else
-      {
-        res.redirect('/wines');
-      }
+    if(err) {console.log(err); } else
+    {
+      res.redirect('/wines');
+    }
   });
 });
 
@@ -37,7 +37,7 @@ router.get('/:id', (req, res)=>{
   Wine.findById(req.params.id, (err, foundWine) =>{
     console.log(foundWine);
     res.render('wines/show.ejs', {
-        wine: foundWine
+      wine: foundWine
     });
   });
 });
