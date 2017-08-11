@@ -10,18 +10,20 @@
 </nav>
 
 <nav class="page-header">
-  <h1 class="reg">Register to be a Wino!</h1>
+  <h1 class="reg">Register to be a Wino! </h1>
 </nav>
 <nav class="navbar navbar-inverse">
   <a href="/" class="btn btn-default" role="button">Home</a>
   <a href="/posts" class="btn btn-default" role="button">All Posts</a>
   <a href="/sessions/logout" class="btn btn-default">Logout</a>
 </nav>
-<form action="/sessions/register" method="POST">
-  <p>Username: <input type="text" name="username" value=""> <br>
-  </p>
-  <p>Password: <input type="password" name="password" value=""><br>
-  </p>
-  <button>Register</button>
-</form>
+<div class="list-group-item">
+  <form action="/sessions/register" method="POST">
+    <p>Username: <input type="text" name="username" value=""> <br>
+    </p>
+    <p>Password: <input type="password" name="password" value=""><br>
+    </p>
+    <button class="btn btn-default" role="button">Register</button>
+  </form>
+</div>
 <% include ../partials/footer.ejs %>

@@ -12,7 +12,8 @@ router.get('/', (req, res) =>{
     Post.find({}, (err, foundPost)=>{
       console.log(foundPost);
       res.render('posts/index.ejs', {
-        posts: foundPost
+        posts: foundPost,
+        userSession: req.session
       });
     });
   } else {
@@ -58,6 +59,7 @@ router.get('/:id', (req, res)=>{
       {
         wine: foundWine,
         post: foundPost
+
       });
     });
   });
